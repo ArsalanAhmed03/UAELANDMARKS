@@ -1,0 +1,6 @@
+.Listing_Section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

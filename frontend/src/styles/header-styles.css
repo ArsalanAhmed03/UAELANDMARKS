@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+}
+
+button {
+    border: none
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+header {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2%;
+    z-index: 10;
+    background-color: white;
+}
+
+.menubutton {
+    background-color: transparent;
+    background-image: url(../icons/list.svg);
+    background-position: center;
+    width: 5vmax;
+    height: 5vh;
+    background-repeat: no-repeat;
+    display: none
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #202020;
+    height: 100vh;
+    width: 30%;
+    transition: all .2s;
+    z-index: 100;
+}
+
+.cross {
+    position: absolute;
+    background-color: transparent;
+    width: 2vmax;
+    height: 2vmax;
+    top: 0;
+    right: 0;
+    margin: 2vmax;
+    background-image: url(../icons/x-square.svg);
+    background-color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.2s;
+}
+
+#menucross{
+    top: 0px;
+    right: 0px;
+    margin: 1vmax;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.cross:hover{
+    transform: scale(1.1);
+}
+
+.Logo,
+.SideLogo {
+    position: relative;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5vmax;
+}
+
+.Logo{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.SideLogo {
+    font-size: 2vmax;
+    height: 9.4vh;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 20px
+}
+
+.mainoptions {
+    font-size: 1.2vmax;
+    height: 10vh;
+    display: flex
+}
+
+.mainoptions a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10vmax;
+}
+
+.mainoptions a:hover {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: #00000028
+}
+
+.searcharea {
+    display: flex
+}
+
+.searcharea input {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    height: 5vh;
+    box-sizing: border-box;
+    padding-left: 5%;
+    font-size: 1.2vmax;
+    border: 1px solid #000
+}
+
+.searcharea input:focus {
+    outline: none;
+}
+
+.searcharea button {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 3vmax;
+    background-color: transparent;
+    border: 1px solid #000;
+    content: "";
+    background-image: url(../icons/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: .8vmax;
+    transition: all .1s
+}
+
+.searcharea button:hover {
+    background-size: 1vmax
+}
+
+.userenterarea {
+    width: 20vmax;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+.userenterarea button,.userenterarea a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+    width: 45%;
+    background-color: transparent;
+    border: 1px solid #000;
+    font-weight: 500;
+    font-size: 1.2vmax;
+    transition: all .2s;
+    position: relative;
+    overflow: hidden;
+    color: #5a5a5a;
+    margin: 5%;
+}
+
+.userenterarea button:before,.userenterarea a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left .3s;
+    z-index: -1;
+    background-color: #3c3c3c
+}
+
+.userenterarea button:hover,.userenterarea a:hover {
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.1)
+}
+
+.userenterarea button:hover::before,.userenterarea a:hover::before {
+    left: 0
+}
+
+.sideoptions {
+    width: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+.sideoptions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    height: 10vh;
+    font-weight: 600;
+}
+
+.sideoptions a:hover {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff
+}
+
+@media (max-width: 600px) {
+    .mainoptions {
+        display: none
+    }
+
+    .menu {
+        left: 0
+    }
+
+    .menubutton {
+        display: block
+    }
+}
+
+@media (max-width: 800px) {
+    .searcharea input {
+        height: 3vh
+    }
+
+    .userenterarea button,.userenterarea a  {
+        height: 3vh
+    }
+}
+
+@media (max-width: 1100px) {
+    .searcharea input {
+        height: 4vh
+    }
+
+    .userenterarea button,.userenterarea a  {
+        height: 4vh
+    }
+}
+
+@media (min-width: 1600px) {
+    .userenterarea button,.userenterarea a{
+        height: 7vh;
+    }
+
+    .searcharea input{
+        height: 7vh;
+    }
+
+}
