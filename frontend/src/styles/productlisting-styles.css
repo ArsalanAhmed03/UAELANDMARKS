@@ -1,0 +1,166 @@
+.product_box {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.images_area {
+    width: 80vw;
+    height: 85vh;
+    background-color: grey;
+    border-radius: 20px;
+}
+
+.info_area {
+    position: relative;
+}
+
+.r1_info {
+    font-size: 1vmax;
+    width: 80vmax;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    justify-content: space-between;
+    color: rgb(91, 91, 91);
+}
+
+.price_tag{
+    color: rgb(91, 91, 91);
+}
+
+.contact_buttons{
+    display: flex;
+    width: 32vmax;
+    justify-content: space-between;
+}
+
+.contact_buttons button {
+    font-weight: bold;
+    height: 6vh;
+    width: 15vmax;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+.contact_buttons .btn1{
+    background-color: white;
+    border: 1px solid black;
+}
+
+.contact_buttons .btn2{
+    color: white;
+    background-color: black;
+}
+
+.price_tag{
+    display: flex;
+    font-weight: 500;
+    align-items:baseline;
+    width: 6.5vmax;
+    justify-content: space-between;
+}
+
+.price_tag .currency{
+    font-size: 1vmax;
+}
+
+.price_tag .amount{
+    font-size: 2vmax;
+}
+
+.description{
+    margin-top: 3%;
+}
+
+.description h3, .owner_area h3{
+    font-weight: 700;
+    color: rgb(100, 100, 100);
+}
+
+.description .des_content{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+    width: 50vmax;
+    text-wrap: wrap;
+}
+
+.owner_area{
+    position: absolute;
+    width: 30vmax;
+    height: 30vh;
+    right: 0;
+    top: 20vh;
+}
+
+.owner_box{
+    color: rgb(86, 86, 86);
+    width: 100%;
+    height: 9vmax;
+    border-radius: 5px;
+    border: 2px solid rgb(158, 158, 158);
+    display: flex;
+    align-items: center;
+}
+
+.owner_picture{
+    margin-left: 0.3vmax;
+    border-radius: 7px;
+    width: 8vmax;
+    height: 8vmax;
+    background-color: rgb(238, 238, 238);
+}
+
+.owner_details{
+    box-sizing: border-box;
+    width: 22vmax;
+    padding: 2%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.owner_details h5, .owner_details h4{
+    font-weight: 400;
+}
+
+.owner_details a button{
+    margin-top: 5px;
+    background-color: transparent;
+    /* color: white; */
+    border-radius: 2px;
+    width: 100%;
+    height: 2.5vmax;
+    position: relative;
+    overflow: hidden;
+    color: black;
+    border: 1px solid grey;
+}
+
+.owner_details a button:before{
+    content: '';
+    position: absolute;
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.owner_details a button:hover{
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.owner_details a button:hover::before{
+    left: 0;
+
+}
+

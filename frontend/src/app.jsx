@@ -6,8 +6,9 @@ import Buy from './Pages/Buy';
 import Sell from './Pages/Sell';
 import Invest from './Pages/Invest';
 import Rent from './Pages/Rent';
+import ProductPage from './Pages/Product_Page';
 
-export default function App(){
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -17,6 +18,7 @@ export default function App(){
         <Route path="/Rent" element={<Buy />} />
         <Route path="/Sell" element={<Sell />} />
         <Route path="/Invest" element={<Invest />} />
+        <Route path="/Product" element={<ProductPage />} />
       </Routes>
     </Router>
   );
