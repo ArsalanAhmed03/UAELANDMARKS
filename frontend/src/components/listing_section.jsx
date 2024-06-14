@@ -7,7 +7,7 @@ export default function ListingSection() {
   return (
     <div className="Listing_Section">
       {
-        Array.from({ length: count }, (_, i) => <MiniListing key={i} />)
+        Array.from({ length: count }, (_, i) => <MiniListing key={i}/>)
       }
     </div>
   )

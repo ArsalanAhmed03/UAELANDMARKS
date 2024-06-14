@@ -9,9 +9,28 @@ footer {
     font-size: 1vmax;
     background-color: rgb(255, 255, 255);
     margin-top: 5px;
+    position: relative;
 }
 
 a{
     text-decoration: none;
     color: black;
+}
+
+footer p, footer div{
+    position: absolute;
+    bottom: 0px;   
+}
+
+footer p{
+    top: 30%;
+}
+
+footer div{
+    top: 40%;
+}
+
+footer img{
+    position: absolute;
+    bottom: 0px;
 }
