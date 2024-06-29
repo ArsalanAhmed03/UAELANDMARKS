@@ -43,22 +43,6 @@
     margin-bottom: 2vmax;
 }
 
-.PropertyUpload .Upload_div form .select_options input {
-    width: 25vw;
-    height: 5vh;
-    box-sizing: border-box;
-    padding: 1vmax;
-}
-
-.PropertyUpload .Upload_div form .select_options input::placeholder {
-    font-size: small;
-}
-
-.upload_labels {
-    font-size: 1.5vmax;
-    font-weight: 600;
-}
-
 .PropertyUpload .Upload_div form button {
     background-color: transparent;
     border: 1px solid grey;
@@ -69,73 +53,3 @@
 
 }
 
-.preview_section {
-    color: rgb(88, 88, 88);
-    width: 40vmax;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden;
-}
-
-.preview_section hr {
-    width: 95%;
-}
-
-.preview_section .live_preview {
-    width: 30vmax;
-    border: 6px solid rgb(155, 155, 155);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 60vh;
-}
-
-.live_preview .preview_picture {
-    margin-top: 1%;
-    width: 98%;
-    height: 30vh;
-    background-color: #F2F2F2;
-    border-radius: 5px;
-}
-
-.preview_section .price_type {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-}
-
-.property_type {
-    font-size: 1vmax;
-    font-weight: 700;
-}
-
-.mini_price_tag {
-    display: flex;
-    font-weight: 500;
-    align-items: baseline;
-    width: 4.5vmax;
-    justify-content: space-between;
-}
-
-.mini_price_tag .currency {
-    font-size: 0.8vmax;
-}
-
-.mini_price_tag .amount {
-    font-size: 1.2vmax;
-}
-
-.live_preview .size,
-.live_preview .short_description,
-.live_preview .description {
-    display: flex;
-    width: 95%;
-    font-size: 1vmax;
-}
-
-.live_preview .short_description,
-.live_preview .description {
-    font-size: 1.2vmax;
-}

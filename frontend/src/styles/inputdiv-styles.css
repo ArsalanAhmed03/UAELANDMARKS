@@ -1,0 +1,17 @@
+.select_options input {
+    width: 25vw;
+    height: 5vh;
+    box-sizing: border-box;
+    padding: 1vmax;
+    border-radius: 2px;
+    border: 1px solid rgba(128, 128, 128, 0.484);
+}
+
+.select_options input::placeholder {
+    font-size: small;
+}
+
+.upload_labels {
+    font-size: 1.5vmax;
+    font-weight: 600;
+}

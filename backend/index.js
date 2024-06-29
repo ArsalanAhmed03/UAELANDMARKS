@@ -7,6 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const users = require("./models/user.model.js");
+const Listings = require("./models/Listings.modles.js");
 
 app.post('/validate-email', async (req, res) => {
     const email = req.body.email;
@@ -51,10 +52,10 @@ app.post('/signup', async (req, res) => {
     try {
         await user.save();
         console.log('User has been successfully saved to the database.');
-        res.status(200).json({UserAdded: true});
+        res.status(200).json({ UserAdded: true });
     } catch (error) {
         console.log('User SignUp Failed.');
-        res.status(500).json({UserAdded: false});
+        res.status(500).json({ UserAdded: false });
     }
 });
 
@@ -64,14 +65,95 @@ app.post('/login', async (req, res) => {
     const user = await users.find({ Email: email, Password: password });
     if (user.length == 0) {
         console.log("No Such User Found");
-    }
-    else {
+        res.status(500).json({ loginSuccess: false });
+    } else {
         console.log(user[0].name);
         console.log(password);
+        res.status(200).json({
+            loginSuccess: true,
+            user: {
+                name: user[0].name,
+                email: user[0].Email
+            }
+        });
     }
-
-    res.redirect('/');
 });
+
+app.post('/Add_Sell_listings', async (req, res) => {
+    const Action_Type = "Sell";
+    const Property_Type =  req.body.Property_Type;
+    const Area =  req.body.Area;
+    const City =  req.body.City;
+    const Size =  req.body.Size;
+    const Price =  req.body.Price;
+    const No_of_bedrooms =  req.body.No_of_bedrooms;
+    const No_of_bathrooms =  req.body.No_of_bathrooms;
+    const description =  req.body.description;
+    const Condition =  req.body.Condition;
+
+    const newListing = Listings({
+        Property_Type:Property_Type,
+        Action_Type:Action_Type,
+        Area:Area,
+        City:City,
+        Size:Size,
+        Price:Price,
+        No_of_bedrooms:No_of_bedrooms,
+        No_of_bathrooms:No_of_bathrooms,
+        description:description,
+        Condition:Condition
+    });
+
+    try {
+        await newListing.save();
+        console.log('Listing has been successfully saved to the database.');
+        res.status(200).json({ ListingAdded: true });
+    } catch (error) {
+        console.log('Listing creation failed.', error);
+        res.status(500).json({ ListingAdded: false });
+    }
+});
+
+
+app.post('Add_Rent_listings', async (req, res) => {
+    const Action_Type = "Rent";
+    const Property_Type =  req.body.Property_Type;
+    const Area =  req.body.Area;
+    const City =  req.body.City;
+    const Size =  req.body.Size;
+    const Price =  req.body.Price;
+    const No_of_bedrooms =  req.body.No_of_bedrooms;
+    const No_of_bathrooms =  req.body.No_of_bathrooms;
+    const description =  req.body.description;
+    const Condition =  req.body.Condition;
+
+    const newListing = Listings({
+        Property_Type:Property_Type,
+        Action_Type:Action_Type,
+        Area:Area,
+        City:City,
+        Size:Size,
+        Price:Price,
+        No_of_bedrooms:No_of_bedrooms,
+        No_of_bathrooms:No_of_bathrooms,
+        description:description,
+        Condition:Condition
+    });
+
+    try {
+        await newListing.save();
+        console.log('Listing has been successfully saved to the database.');
+        res.status(200).json({ ListingAdded: true });
+    } catch (error) {
+        console.log('Listing creation failed.', error);
+        res.status(500).json({ ListingAdded: false });
+    }
+});
+
+// app.post('Add_listings', async (req, res) => {
+
+// });
+
 
 mongoose.connect('mongodb://localhost:27017/RealEstate').then(() => {
     console.log("Database connected");
